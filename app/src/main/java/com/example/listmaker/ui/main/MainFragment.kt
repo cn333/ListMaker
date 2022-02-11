@@ -16,17 +16,18 @@ import com.example.listmaker.models.TaskList
 // Binding Class: MainActivityBinding
 // layout: main_fragment.xml
 // Binding Class: MainFragmentBinding
-class MainFragment(val clickListener: MainFragmentInteractionListener) :
+class MainFragment() :
     Fragment(), ListSelectionRecyclerViewAdapter.ListSelectionRecyclerViewClickListener {
 
     private lateinit var binding: MainFragmentBinding
+    lateinit var clickListener: MainFragmentInteractionListener
 
     interface MainFragmentInteractionListener {
         fun listItemTapped(list: TaskList)
     }
 
     companion object {
-        fun newInstance(clickListener: MainFragmentInteractionListener) = MainFragment(clickListener)
+        fun newInstance() = MainFragment()
     }
 
     private lateinit var viewModel: MainViewModel
